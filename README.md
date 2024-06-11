@@ -1,0 +1,2 @@
+# KinalSmart
+Proyecto
