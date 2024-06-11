@@ -379,25 +379,7 @@ public class FacturaController implements Initializable {
     }
 
     public void reportes() {
-        switch (tipoDeOperador) {
-            case NINGUNO:
-                imprimirReporte();
-                break;
-            case ACTUALIZAR:
-                desactivarControles();
-                limpiarControles();
-                btnEditar.setText("Editar");
-                btnReportes.setText("Reportes");
-                btnAgregar.setDisable(false);
-                btnEliminar.setDisable(false);
-                tipoDeOperador = operador.NINGUNO;
-                break;
 
-        }
-    }
-    
-    public void imiprimirReporte(){
-        
     }
 
     public void eliminar() {
