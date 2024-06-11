@@ -1,2 +1,2 @@
-# KinalSmart
-Proyecto
+# KinalSmart2
+proyecto

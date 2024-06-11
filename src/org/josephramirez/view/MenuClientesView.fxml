@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="844.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josephramirez.controller.MenuClientesController">
+   <children>
+      <ImageView fitHeight="518.0" fitWidth="851.0" layoutX="-3.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/ClientesView.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblClientes" layoutX="34.0" layoutY="209.0" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="777.0" style="-fx-background-radius: 10 10 10 10;">
+        <columns>
+          <TableColumn fx:id="colcodigoCliente" minWidth="111.0" prefWidth="75.0" style="-fx-background-radius: 10 10 10 10;" text="CodigoCliente" />
+          <TableColumn fx:id="colnitCliente" minWidth="111.0" prefWidth="75.0" style="-fx-background-radius: 10 10 10 10;" text="NitCliente" />
+            <TableColumn fx:id="colnombresClientes" minWidth="111.0" prefWidth="75.0" style="-fx-background-radius: 10 10 10 10;" text="nombresClientes" />
+            <TableColumn fx:id="colapellidosClientes" minWidth="111.0" prefWidth="75.0" style="-fx-background-radius: 10 10 10 10;" text="ApellidosCLientes" />
+            <TableColumn fx:id="coltelefonoClientes" minWidth="111.0" prefWidth="75.0" style="-fx-background-radius: 10 10 10 10;" text="TelefonosClientes" />
+            <TableColumn fx:id="coldireccionClientes" minWidth="111.0" prefWidth="75.0" style="-fx-background-radius: 10 10 10 10;" text="DireccionCliente" />
+            <TableColumn fx:id="colcorreoClientes" minWidth="111.0" prefWidth="75.0" style="-fx-background-radius: 10 10 10 10;" text="CorreoCliente" />
+        </columns>
+      </TableView>
+      <GridPane layoutX="201.0" layoutY="417.0" prefHeight="30.0" prefWidth="444.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#Agregar" style="-fx-background-radius: 10 10 10  10;" stylesheets="@../recursos/KinalSmart2CSS.css" text="AGREGAR" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" style="-fx-background-radius: 10 10 10 10;" stylesheets="@../recursos/KinalSmart2CSS.css" text="ELIMINAR" GridPane.columnIndex="1" />
+            <Button fx:id="btnEditar" layoutX="142.0" layoutY="12.0" mnemonicParsing="false" onAction="#editar" style="-fx-background-radius: 10 10 10 10;" stylesheets="@../recursos/KinalSmart2CSS.css" text="EDITAR" GridPane.columnIndex="2" />
+            <Button fx:id="btnReportes" layoutX="253.0" layoutY="12.0" mnemonicParsing="false" onAction="#reportes" style="-fx-background-radius: 10 10 10 10;" stylesheets="@../recursos/KinalSmart2CSS.css" text="REPORTES" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="34.0" layoutY="21.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="CodigoCliente" />
+            <Label text="nitCliente" GridPane.rowIndex="1" />
+            <Label layoutX="10.0" layoutY="47.0" text="NombresCliente" GridPane.rowIndex="2" />
+            <TextField fx:id="txtcodigoCliente" style="-fx-background-radius: 10 10 10 10;" GridPane.columnIndex="1" />
+            <TextField fx:id="txtnitCliente" style="-fx-background-radius: 10 10 10 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtnombresClientes" style="-fx-background-radius: 10 10 10 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="381.0" layoutY="30.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="ApellidosCliente" />
+            <Label text="telefonoCliente" GridPane.rowIndex="1" />
+            <Label layoutX="10.0" layoutY="47.0" text="DireccionCliente" GridPane.rowIndex="2" />
+            <TextField fx:id="txtapellidosClientes" style="-fx-background-radius: 10 10 10 10;" GridPane.columnIndex="1" />
+            <TextField fx:id="txttelefonoCliente" style="-fx-background-radius: 10 10 10 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtdireccionCliente" style="-fx-background-radius: 10 10 10 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label layoutX="10.0" layoutY="77.0" text="CorreoCliente" GridPane.rowIndex="3" />
+            <TextField fx:id="txtcorreoCliente" layoutX="110.0" layoutY="73.0" style="-fx-background-radius: 10 10 10 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button fx:id="btnRegresar" layoutX="726.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-radius: 10;" stylesheets="@../recursos/KinalSmart2CSS.css" text="REGRESAR" />
+   </children>
+</AnchorPane>
