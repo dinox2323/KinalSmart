@@ -387,6 +387,10 @@ create table Empleado
     constraint  FK_Empleado_cargoEmpleado  foreign key (codigoCargoEmpleado) references cargoEmpleado (codigoCargoEmpleado)
 );
 -- -------------------------------------------------------------------------
+
+
+
+
 delimiter $$
 create procedure sp_agregar_Empleado(in _codigoEmpleado int, in _nombresEmpleado varchar (50) , in _apellidosEmpleado varchar (50), in _sueldo decimal (10,2),
 in _direccion varchar (150), in _turno varchar (15), in _codigoCargoEmpleado int)
@@ -451,7 +455,11 @@ delimiter $$
  delimiter ;
 
 -- call sp_eliminar_Empleado (2);
--- ----------------------------- FACTURA --------------------------------------------
+-- --------------------------------------------------------------------------------- 
+
+-- 								FACTURA
+
+-- -----------------------------  --------------------------------------------
 create table Factura
 (
 	numeroFactura int not null,
@@ -929,4 +937,17 @@ delimiter $$
  end $$
  delimiter ;
 
--- call sp_eliminar_DetalleFactura (2);
+ -- call sp_eliminar_DetalleFactura (1);
+
+-- --------------------------------------------------------------------------
+select * from DetalleFactura
+	join Factura on DetalleFactura.numeroFactura = Factura.numeroFactura
+    join Clientes on Factura.codigoCliente = Clientes.codigoCliente
+    join Productos on DetalleFactura.codigoProducto = Productos.codigoProducto
+    where Factura.numeroFactura
+    
+-- ----------------------------------------------------------------------------
+SELECT Clientes.NombreCliente, Pedidos.PedidoID
+FROM Clientes LEFT JOIN Pedidos
+ON Clientes.ClienteID=Pedidos.ClienteID
+ORDER BY Clientes.NombreCliente;

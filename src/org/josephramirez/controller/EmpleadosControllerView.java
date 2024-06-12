@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,6 +23,7 @@ import javax.swing.JOptionPane;
 import org.josephramirez.bean.CargoEmpleado;
 import org.josephramirez.bean.Empleados;
 import org.josephramirez.db.Conexion;
+import org.josephramirez.reporteria.GenerarReportes;
 import org.josephramirez.system.Main;
 
 public class EmpleadosControllerView implements Initializable {
@@ -325,7 +328,27 @@ public class EmpleadosControllerView implements Initializable {
     }
 
     public void reportes() {
+        switch (tipoDeOperador) {
+            case NINGUNO:
+                imprimirReporte();
+                break;
+            case ACTUALIZAR:
+                desactivarControles();
+                limpiarControles();
+                btnEditar.setText("Editar");
+                btnReportes.setText("Reportes");
+                btnAgregar.setDisable(false);
+                btnEliminar.setDisable(false);
+                tipoDeOperador = operador.NINGUNO;
+                break;
 
+        }
+    }
+    
+    public void imprimirReporte(){
+        Map parametros = new HashMap();
+        parametros.put("codigoProveedor", null);
+        GenerarReportes.mostrarReportes("ReporteEmpleados.jasper", "Reporte", parametros);
     }
 
     public void eliminar() {

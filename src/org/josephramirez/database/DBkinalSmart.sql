@@ -99,6 +99,10 @@ delimiter ;
 
 call sp_agregar_CargoEmpleado(1,'Gerente','Ser lider');
 call sp_agregar_CargoEmpleado(2,'Supervisor','Supervisar a los trabajadores');
+call sp_agregar_CargoEmpleado(3,'Ingeniero','Ingeniero');
+call sp_agregar_CargoEmpleado(4,'Arquitecto','Arrquitecto');
+call sp_agregar_CargoEmpleado(5,'Senior','Senior');
+
 -- ---------------------------------------------------------------------------------------------------
 Delimiter $$
 	Create procedure sp_ListarCargoEmpleado ()
@@ -387,6 +391,10 @@ create table Empleado
     constraint  FK_Empleado_cargoEmpleado  foreign key (codigoCargoEmpleado) references cargoEmpleado (codigoCargoEmpleado)
 );
 -- -------------------------------------------------------------------------
+
+
+
+
 delimiter $$
 create procedure sp_agregar_Empleado(in _codigoEmpleado int, in _nombresEmpleado varchar (50) , in _apellidosEmpleado varchar (50), in _sueldo decimal (10,2),
 in _direccion varchar (150), in _turno varchar (15), in _codigoCargoEmpleado int)
@@ -397,6 +405,11 @@ end $$
 delimiter ;
 
 call sp_agregar_Empleado(1,'Joseph Moises','Ramirez Gaitan',3500.00,'Zona 3 Guatemala','Matutina',1);
+call sp_agregar_Empleado(2,'Alejandra Sofia','Ramirez Pedroza',4500.00,'Zona 4 Guatemala','Matutina',2);
+call sp_agregar_Empleado(3,'Krystel Fernanda','Quintanilla Escobar',5000.00,'Zona 7 Guatemala','Matutina',3);
+call sp_agregar_Empleado(4,'Doris Patricia','Monte Negro',2500.00,'Zona 4 Guatemala','Matutina',4);
+call sp_agregar_Empleado(5,'Abner Daniel','Ramirez Gaitan',3600.00,'Zona 6 Guatemala','Matutina',5);
+
 -- ------------------------------------------------------------------------------------------------------
 Delimiter $$
 	Create procedure sp_ListarEmpleado ()
@@ -451,7 +464,11 @@ delimiter $$
  delimiter ;
 
 -- call sp_eliminar_Empleado (2);
--- ----------------------------- FACTURA --------------------------------------------
+-- --------------------------------------------------------------------------------- 
+
+-- 								FACTURA
+
+-- -----------------------------  --------------------------------------------
 create table Factura
 (
 	numeroFactura int not null,
@@ -711,7 +728,7 @@ SELECT Productos.codigoProducto, TipoProducto.codigoTipoProducto FROM Productos
 INNER JOIN TipoProducto ON Productos.codigoProducto=TipoProducto.codigoTipoProducto
 ORDER BY Productos.codigoProducto;
 -- -----------------------------------------------------------------------
-SELECT Productos.codigoProducto,Productos.precioUnitario,Productos.existencia,TipoProducto.codigoTipoProducto 
+SELECT TipoProducto.codigoTipoProducto,Productos.precioUnitario,Productos.existencia,Productos.codigoProducto 
 FROM Productos LEFT JOIN TipoProducto
 ON Productos.codigoProducto = TipoProducto.codigoTipoProducto
 ORDER BY Productos.codigoProducto;
@@ -929,4 +946,14 @@ delimiter $$
  end $$
  delimiter ;
 
--- call sp_eliminar_DetalleFactura (2);
+ -- call sp_eliminar_DetalleFactura (1);
+
+-- --------------------------------------------------------------------------
+
+select * from DetalleFactura
+	join Factura on DetalleFactura.numeroFactura = Factura.numeroFactura
+    join Clientes on Factura.codigoCliente = Clientes.codigoCliente
+    join Productos on DetalleFactura.codigoProducto = Productos.codigoProducto
+    where Factura.numeroFactura ;
+    
+
