@@ -4,6 +4,8 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.JOptionPane;
 import org.josephramirez.bean.Proveedores;
 import org.josephramirez.db.Conexion;
+import org.josephramirez.reporteria.GenerarReportes;
 import org.josephramirez.system.Main;
 
 public class ProveedoresController implements Initializable {
@@ -291,6 +294,9 @@ public class ProveedoresController implements Initializable {
 
     public void reportes() {
         switch (tipoDeOperadores) {
+            case NINGUNO:
+                imprimirReporte();
+                break;
             case ACTUALIZAR:
                 desactivarControles();
                 limpiarControles();
@@ -299,8 +305,15 @@ public class ProveedoresController implements Initializable {
                 btnAgregar.setDisable(false);
                 btnEliminar.setDisable(false);
                 tipoDeOperadores = operador.NINGUNO;
+                break;
 
         }
+    }
+    
+    public void imprimirReporte(){
+        Map parametros = new HashMap();
+        parametros.put("codigoProveedor", null);
+        GenerarReportes.mostrarReportes("ReporteProveedores.jasper", "Reporte", parametros);
     }
 
     public void desactivarControles() {

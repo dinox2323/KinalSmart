@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ClientesReporte" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e9e6f7b-66ff-4049-a39f-9a7efef8b04e">
 	<property name="ireport.zoom" value="1.3310000000000004"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.y" value="1152"/>
 	<queryString>
 		<![CDATA[call sp_ListarClientes]]>
 	</queryString>
@@ -30,8 +30,8 @@
 	<background>
 		<band height="802" splitType="Stretch">
 			<image scaleImage="FillFrame">
-				<reportElement x="0" y="0" width="555" height="802" uuid="3ee64acf-09d2-4460-8fb4-44e71cb5b986"/>
-				<imageExpression><![CDATA["C:\\Users\\informatica\\Desktop\\KinalSmart2\\src\\org\\josephramirez\\imagenes\\Clientes Reporte.png"]]></imageExpression>
+				<reportElement x="0" y="0" width="555" height="802" uuid="67052180-2837-48c0-866e-acfe271aa9de"/>
+				<imageExpression><![CDATA["C:\\Users\\josem\\OneDrive - Fundación Kinal -Alumnos-\\Desktop\\KinalSmart-main\\src\\org\\josephramirez\\imagenes\\Clientes Reporte.png"]]></imageExpression>
 			</image>
 		</band>
 	</background>

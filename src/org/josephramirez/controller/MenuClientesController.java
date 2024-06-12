@@ -284,21 +284,21 @@ public class MenuClientesController implements Initializable {
     }
 
     public void reportes() {
-        switch (tipoDeOperadores) {
-            case NINGUNO:
-                imprimirReporte();
-                break;
-            case ACTUALIZAR:
-                desactivarControles();
-                limpiarControles();
-                btnEditar.setText("Editar");
-                btnReportes.setText("Reportes");
-                btnAgregar.setDisable(false);
-                btnEliminar.setDisable(false);
-                tipoDeOperadores = operador.NINGUNO;
-                break;
+            switch (tipoDeOperadores) {
+                case NINGUNO:
+                    imprimirReporte();
+                    break;
+                case ACTUALIZAR:
+                    desactivarControles();
+                    limpiarControles();
+                    btnEditar.setText("Editar");
+                    btnReportes.setText("Reportes");
+                    btnAgregar.setDisable(false);
+                    btnEliminar.setDisable(false);
+                    tipoDeOperadores = operador.NINGUNO;
+                    break;
 
-        }
+            }
     }
     
     public void imprimirReporte(){

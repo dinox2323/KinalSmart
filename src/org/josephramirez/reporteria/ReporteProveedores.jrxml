@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteProveedores" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b65fd44b-c3d1-403d-9403-e0a7aedd7abd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<queryString>
+		<![CDATA[call sp_ListarProveedores]]>
+	</queryString>
+	<field name="codigoProveedor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nitProveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresProveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosProveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionProveedor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="razonSocial" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contactoPrincipal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paginaWeb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="555" height="802" uuid="d869d5d1-cef4-4710-9b1a-b63f88d3a48a"/>
+				<imageExpression><![CDATA["C:\\Users\\josem\\OneDrive - Fundación Kinal -Alumnos-\\Desktop\\KinalSmart-main\\src\\org\\josephramirez\\imagenes\\Reporte Proveedores.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="63" width="73" height="20" uuid="ed5d5132-9c86-4509-8fae-0f9783f8a512"/>
+				<text><![CDATA[ID Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="61" width="52" height="20" uuid="0d3a4a90-e60b-4485-be0f-feb7eeedcb66"/>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="63" width="54" height="20" uuid="6cbd3559-3c80-4a37-bf13-b03de1b3cc94"/>
+				<text><![CDATA[Direcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="63" width="56" height="20" uuid="551c9a3a-3a57-4e6e-9da9-9fb7c8e3633b"/>
+				<text><![CDATA[Contacto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="63" width="45" height="20" uuid="4bbd64da-1283-49c5-a9fb-82e1b24b254a"/>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="25" y="28" width="73" height="20" uuid="d142994f-c2e1-44ef-9d1a-960834154fd0"/>
+				<textFieldExpression><![CDATA[$F{codigoProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="28" width="52" height="20" uuid="b2ad8e4e-e428-4dab-9f49-888848b93142"/>
+				<textFieldExpression><![CDATA[$F{apellidosProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="28" width="54" height="20" uuid="06b814a5-c7ec-472b-8dfe-53a8a1a158ae"/>
+				<textFieldExpression><![CDATA[$F{direccionProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="28" width="90" height="20" uuid="8f0487a1-b7f9-458c-b40b-3acfbcf5b99e"/>
+				<textFieldExpression><![CDATA[$F{contactoPrincipal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="28" width="45" height="20" uuid="4d67c45d-ee72-46fa-bcfe-01e6d80bc61a"/>
+				<textFieldExpression><![CDATA[$F{nombresProveedor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="21" width="555" height="2" uuid="bac7e925-f7b2-491a-9076-3d0ac097ef47"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

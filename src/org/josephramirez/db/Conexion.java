@@ -21,8 +21,8 @@ public class Conexion {
     public Conexion() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBkinalSmart?useSSL=false", "2023302_IN5BV", "abc123!!");
-           // conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBkinalSmart?useSSL=false", "root", "admin");
+            //conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBkinalSmart?useSSL=false", "2023302_IN5BV", "abc123!!");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBkinalSmart?useSSL=false", "root", "admin");
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
