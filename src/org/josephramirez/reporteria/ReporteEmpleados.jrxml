@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpleados" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b6d5818-ccc9-4ed4-8120-7da50a8878ee">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="48"/>
+	<property name="ireport.y" value="0"/>
 	<queryString>
 		<![CDATA[call sp_ListarEmpleado]]>
 	</queryString>
@@ -111,20 +111,10 @@
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch">
-			<image scaleImage="FillFrame">
-				<reportElement x="357" y="0" width="121" height="45" uuid="a774ed4a-0bef-4b75-bb65-e69a891c3ee3"/>
-				<imageExpression><![CDATA["C:\\Users\\josem\\Downloads\\firma 2023013.png"]]></imageExpression>
-			</image>
-		</band>
+		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch">
-			<textField>
-				<reportElement x="25" y="0" width="42" height="20" uuid="86e8d747-da30-4275-b61e-0e5f09e0c10f"/>
-				<textFieldExpression><![CDATA["Firma"]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="54" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>

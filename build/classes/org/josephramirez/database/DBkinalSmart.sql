@@ -99,6 +99,10 @@ delimiter ;
 
 call sp_agregar_CargoEmpleado(1,'Gerente','Ser lider');
 call sp_agregar_CargoEmpleado(2,'Supervisor','Supervisar a los trabajadores');
+call sp_agregar_CargoEmpleado(3,'Ingeniero','Ingeniero');
+call sp_agregar_CargoEmpleado(4,'Arquitecto','Arrquitecto');
+call sp_agregar_CargoEmpleado(5,'Senior','Senior');
+
 -- ---------------------------------------------------------------------------------------------------
 Delimiter $$
 	Create procedure sp_ListarCargoEmpleado ()
@@ -401,6 +405,11 @@ end $$
 delimiter ;
 
 call sp_agregar_Empleado(1,'Joseph Moises','Ramirez Gaitan',3500.00,'Zona 3 Guatemala','Matutina',1);
+call sp_agregar_Empleado(2,'Alejandra Sofia','Ramirez Pedroza',4500.00,'Zona 4 Guatemala','Matutina',2);
+call sp_agregar_Empleado(3,'Krystel Fernanda','Quintanilla Escobar',5000.00,'Zona 7 Guatemala','Matutina',3);
+call sp_agregar_Empleado(4,'Doris Patricia','Monte Negro',2500.00,'Zona 4 Guatemala','Matutina',4);
+call sp_agregar_Empleado(5,'Abner Daniel','Ramirez Gaitan',3600.00,'Zona 6 Guatemala','Matutina',5);
+
 -- ------------------------------------------------------------------------------------------------------
 Delimiter $$
 	Create procedure sp_ListarEmpleado ()
@@ -719,7 +728,7 @@ SELECT Productos.codigoProducto, TipoProducto.codigoTipoProducto FROM Productos
 INNER JOIN TipoProducto ON Productos.codigoProducto=TipoProducto.codigoTipoProducto
 ORDER BY Productos.codigoProducto;
 -- -----------------------------------------------------------------------
-SELECT Productos.codigoProducto,Productos.precioUnitario,Productos.existencia,TipoProducto.codigoTipoProducto 
+SELECT TipoProducto.codigoTipoProducto,Productos.precioUnitario,Productos.existencia,Productos.codigoProducto 
 FROM Productos LEFT JOIN TipoProducto
 ON Productos.codigoProducto = TipoProducto.codigoTipoProducto
 ORDER BY Productos.codigoProducto;
@@ -940,14 +949,11 @@ delimiter $$
  -- call sp_eliminar_DetalleFactura (1);
 
 -- --------------------------------------------------------------------------
+
 select * from DetalleFactura
 	join Factura on DetalleFactura.numeroFactura = Factura.numeroFactura
     join Clientes on Factura.codigoCliente = Clientes.codigoCliente
     join Productos on DetalleFactura.codigoProducto = Productos.codigoProducto
-    where Factura.numeroFactura
+    where Factura.numeroFactura ;
     
--- ----------------------------------------------------------------------------
-SELECT Clientes.NombreCliente, Pedidos.PedidoID
-FROM Clientes LEFT JOIN Pedidos
-ON Clientes.ClienteID=Pedidos.ClienteID
-ORDER BY Clientes.NombreCliente;
+
